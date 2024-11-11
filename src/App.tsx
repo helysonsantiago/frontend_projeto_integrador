@@ -1,13 +1,17 @@
 
 import './App.css';
 import GlobalStyles from '../GlobalStyles';
-import Auth from './pages/auth/Auth'
+
+
+import Banner from './components/retirar-produto';
 
 const App = () => {
   return (
     <>
-  <GlobalStyles />
-  <Auth/>
+    
+    <GlobalStyles />
+    <Banner/>
+ 
     </>
   )
 }
