@@ -10,7 +10,7 @@ const Retirada = () => {
             <div className="retirada">
                 <fieldset>
                     <div className="fieldset-content">
-                        {/* Coloca o ícone ao lado dos inputs */}
+                        
                         <div className="icon-input-container">
                             <IoImage/>
                             <div className="input-container">
@@ -19,7 +19,7 @@ const Retirada = () => {
                                 <input placeholder="Descrição" />
                             </div>
                         </div>
-                        {/* Grupo de inputs adicionais */}
+                       
                         <div className="additional-inputs">
                             <input placeholder="Nome do produto" />
                             <input placeholder="Quantidade" />
