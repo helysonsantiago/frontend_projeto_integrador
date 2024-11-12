@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
   /*Globals Styles*/
   :root{
     // DEFINA AQUI VARIAVEIS GLOBAIS
+    --verde: #218D9E;
   }
   /*Standard formatting*/
   *{

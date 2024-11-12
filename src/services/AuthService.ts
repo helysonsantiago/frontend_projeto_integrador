@@ -16,7 +16,7 @@ class AuthService {
     const response  = await axios.get(BASE_URL+"usuario");
     console.log(response?.data)
     if(response.data[0]?.email === login.email && response.data[0]?.password === login.password){
-        return {code: 200, message: "Erro ao fazer login"};
+        return {code: 200, message: "Login efetuado com sucesso!"};
     }
     return {code: 400, message: "Verifique os dados e tente novamente"};
    }catch(error){
