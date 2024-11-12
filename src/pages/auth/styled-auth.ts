@@ -6,7 +6,7 @@ type ContainerAuthProps = {
 };
 
 export const StyledContainerAuth = styled.div<ContainerAuthProps>`
-  height: 80vh;
+  height: 80%;
   width: 100%;
   display: flex;
   align-items: center;

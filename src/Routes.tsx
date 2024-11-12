@@ -1,26 +1,34 @@
 import React from "react";
 import * as Redux from "react-redux";
-import SidebarComponent from './components/sidebar/SidebarComponent';
+import SidebarComponent from "./components/sidebar/SidebarComponent";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Auth from "./pages/auth/Auth";
 import { authState } from "./types/auth/authType";
-import Retirada from "./components/retirar-produto";
+import Retirada from "./pages/retirar-produto";
+import Stock from "./pages/stock/Stock";
 
-
-
-
-const AppRoutes: React.FC = () : JSX.Element => {
+const AppRoutes: React.FC = (): JSX.Element => {
   const { auth } = Redux.useSelector(
     (state: { authStore: authState }) => state.authStore
   );
 
   return (
     <>
-       {auth ? <SidebarComponent/> : null} 
+      {auth ? <SidebarComponent /> : null}
 
       <Routes>
-        <Route path="/" element={auth ? <Navigate to={"retirada"} /> : <Auth />} />
-        <Route path="/retirada" element={!auth ? <Navigate to={"/"} /> : <Retirada/>} />
+        <Route
+          path="/"
+          element={auth ? <Navigate to={"retirada"} /> : <Auth />}
+        />
+        <Route
+          path="/retirada"
+          element={!auth ? <Navigate to={"/"} /> : <Retirada />}
+        />
+        <Route
+          path="/estoque"
+          element={!auth ? <Navigate to={"/"} /> : <Stock />}
+        />
       </Routes>
     </>
   );

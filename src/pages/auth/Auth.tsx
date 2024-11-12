@@ -44,9 +44,9 @@ const Auth = (): React.ReactElement => {
   React.useEffect(() => {
     const timer = setTimeout(() => {
       dispatch(resetAuth());
-    }, 10000);
+    }, 1000);
     return () => clearTimeout(timer);
-  }, [error_login]);
+  }, [dispatch, error_login]);
 
   React.useEffect(() => {
     const notify = () => {
@@ -54,7 +54,7 @@ const Auth = (): React.ReactElement => {
         toast.error(error_login);
     };
     notify();
-  }, [error_login]);
+  }, [dispatch, error_login]);
 
   return (
     <Formik

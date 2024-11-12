@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import AuthService, { DATAAPI } from '../services/AuthService';
+import AuthService from '../services/AuthService';
 import { authState, userCredentials } from '../types/auth/authType';
+import { responseApiType } from '../types/response-api/responseApiTypes';
 
 
 
@@ -14,11 +15,11 @@ const initialState: authState = {
 export const loginUSer = createAsyncThunk(
   'login/loginUser',
   async (dt: userCredentials, thunkAPI) => {
-    const data : DATAAPI  = await AuthService.signin({
+    const data : responseApiType  = await AuthService.signin({
       email: dt.email,
       password: dt.password,
     });
-    if (data.code === 400 ) {
+    if (data.code === 400 || data.code === 500 ) {
       return thunkAPI.rejectWithValue(data.message);
     } else if (data.code === 200) {
       return thunkAPI.fulfillWithValue(data.message);

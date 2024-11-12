@@ -9,7 +9,7 @@ import Routes from './Routes';
 
 const App = () => {
   return (
-    <div id={'id'}>
+    <div id={'App'}>
     <GlobalStyles />
     <Routes/>
     <ToastContainer

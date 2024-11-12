@@ -1,6 +1,15 @@
 {
     "usuario": [
       { "id": 1, "email": "helysontest@gmail.com", "password": "Testando", "nome":"Helyson Santiago"}
+    ],
+    "estoque":[
+      { "id": 144424, "nome": "Resina Comp", "quantidade": 2, "preco": 15.00 , "descricao":" Gato sarado"},
+      { "id": 25353535, "nome": "Resina Comp", "quantidade": 2, "preco": 15.00 , "descricao":" Gato sarado"},
+      { "id": 6363636, "nome": "Resina Comp", "quantidade": 2, "preco": 15.00 , "descricao":" Gato sarado"},
+      { "id": 24242, "nome": "Resina Comp", "quantidade": 2, "preco": 15.00 , "descricao":" Gato sarado"},
+      { "id": 630950395, "nome": "Resina Comp", "quantidade": 2, "preco": 15.00 , "descricao":" Gato sarado"},
+      { "id": 229424, "nome": "Resina Comp", "quantidade": 2, "preco": 15.00 , "descricao":" Gato sarado"},
+      { "id": 1292822, "nome": "Resina Comp", "quantidade": 2, "preco": 15.00 , "descricao":" Gato sarado"}
     ]
   }
   

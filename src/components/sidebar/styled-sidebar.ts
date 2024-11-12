@@ -1,18 +1,22 @@
-import { BsDisplay } from 'react-icons/bs';
+
 import styled from 'styled-components';
 interface propsSidebar{
     toggle:boolean;
 }
 
 export const StyledContainerSidebar = styled.nav <propsSidebar>`
-  
-  height: 100vh;
+
+
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  flex: 0 0 7%;
+
   display: flex;
   justify-content: left;
   align-items: flex-start;  
   flex-direction: column;
   background-color: var(--verde);
-  position: fixed;
 
 
   
@@ -184,7 +188,7 @@ export const StyledBoxConfig = styled.div <propsSidebar>`
     font-size: 28px;
     font-weight: 500;
 
-    padding: ${(props) => {return !props.toggle ? '0px 0px 0px 63px':'0 0 0 0'}};
+    padding: ${(props) => {return props.toggle ? '0px 0px 0px 63px':'0 0 0 0'}};
 
     & p{
         display: ${(props) => {return !props.toggle ? 'block':'none'}};
@@ -196,7 +200,7 @@ export const StyledBoxCaixa5 = styled.div <propsSidebar>`
         color: white;
         font-size: 45px;
     }
-    margin-top: 240px;
+    margin-top: 24px;
     display: flex;
     flex-direction: row;
     align-items: center;
