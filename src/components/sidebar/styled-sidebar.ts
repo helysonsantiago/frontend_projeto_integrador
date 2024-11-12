@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledContainerSidebar = styled.div`
+export const StyledContainerSidebar = styled.nav`
   width: 20vw;
   height: 100vh;
   display: flex;

@@ -1,16 +1,30 @@
 
 import './App.css';
 import GlobalStyles from '../GlobalStyles';
-import Auth from './pages/auth/Auth';
-import SidebarComponent from './components/sidebar/SidebarComponent';
+
+import 'react-toastify/dist/ReactToastify.min.css';
+import { ToastContainer } from 'react-toastify';
+import Routes from './Routes';
 
 const App = () => {
   return (
     <div id={'id'}>
-  <GlobalStyles />
-  {/* <Auth/> */}
-  <SidebarComponent/>
+    <GlobalStyles />
+    <Routes/>
+    <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
     </div>
+  
   )
 }
 
