@@ -1,34 +1,37 @@
-import './retirada.css';
+
 import { IoImage } from "react-icons/io5";
+import { BiArchiveIn } from "react-icons/bi";
+import { StyledContainerForm, StyledContainerRetirada, StyledContentRetirada, StyledTitleRetirada } from './styledRetirada';
 
 const Retirada = () => {
     return (
-        <div>
-            <header>
+        <StyledContainerRetirada>
+            <StyledTitleRetirada>
                 <h1>Retirada</h1>
-            </header>
-            <div className="retirada">
-                <fieldset>
-                    <div className="fieldset-content">
-                        
-                        <div className="icon-input-container">
-                            <IoImage/>
-                            <div className="input-container">
+            </StyledTitleRetirada>
+            <StyledContainerForm>
+            <IoImage className="ioimage"/>
+                    <StyledContentRetirada >                  
+                        <div>                       
+                            <div className="formcima">
                                 <input placeholder="Código do produto" />                                                                  
-                                <input placeholder="Profissional" />
+                                <input placeholder="Profisional" list="lstprof" /> 
+                                    <datalist id="lstprof">                    
+                                        <option value="DR. ">Doutor</option> 
+                                        <option value="DRA. ">Doutora</option> 
+                                    </datalist>         
                                 <input placeholder="Descrição" />
                             </div>
                         </div>
-                       
-                        <div className="additional-inputs">
+                        <div className="formbaixo">
                             <input placeholder="Nome do produto" />
                             <input placeholder="Quantidade" />
-                            <input placeholder="Retirar" />
+                            <span className="retirabutton">Retirar<BiArchiveIn /></span>
                         </div>
-                    </div>
-                </fieldset>
-            </div>
-        </div>
+                    </StyledContentRetirada >
+            </StyledContainerForm>
+            
+        </StyledContainerRetirada>
     );
 }
 
