@@ -4,6 +4,8 @@ import SidebarComponent from './components/sidebar/SidebarComponent';
 import { Navigate, Route, Routes } from "react-router-dom";
 import Auth from "./pages/auth/Auth";
 import { authState } from "./types/auth/authType";
+import Retirada from "./components/retirar-produto";
+
 
 
 
@@ -14,10 +16,11 @@ const AppRoutes: React.FC = () : JSX.Element => {
 
   return (
     <>
-      {auth ? <SidebarComponent/> : null}
+       {auth ? <SidebarComponent/> : null} 
 
       <Routes>
-        <Route path="/" element={auth ? <Navigate to={"home"} /> : <Auth />} />
+        <Route path="/" element={auth ? <Navigate to={"retirada"} /> : <Auth />} />
+        <Route path="/retirada" element={!auth ? <Navigate to={"/"} /> : <Retirada/>} />
       </Routes>
     </>
   );

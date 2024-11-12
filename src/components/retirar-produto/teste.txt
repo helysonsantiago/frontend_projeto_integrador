@@ -1,0 +1,79 @@
+
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: white;
+    color: black;
+}
+
+header {
+    width: auto;
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 30px;
+    background-color: #218D9E;
+    text-align: center;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+header h1 {
+    font-size: 40px;
+    color: white;
+}
+
+header:hover {
+    background-color: #1A6E7E;
+}
+
+
+
+fieldset {
+    display: inline-block;
+    padding: 15px 10px;
+    border: 2px solid #2B555C;
+    border-radius: 10px;
+    margin-right: 10px;
+  
+}
+
+.retirada input {
+    background-color: #F1F1F1;
+    font-weight: 700;
+    border: 1px solid #2B555C;
+    border-radius: 15px;
+    font-size: 24px;
+    padding: 24px;
+    text-align: center;
+    width: 270px; 
+    color: #5C5C5C;
+}
+.fieldset-content {
+    display: flex;
+    flex-direction: column; 
+   
+}
+
+.additional-inputs {
+    display: flex; 
+    gap: 15px;
+    margin-top: 10px; 
+}
+
+.input-container {
+    display: flex;
+    gap: 15px; 
+    align-items: center;
+}
+fieldset svg {
+    color: #218D9E;
+    font-size: 280px; 
+    margin-right: 15px; 
+    display: flex
+   
+    
+   
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
