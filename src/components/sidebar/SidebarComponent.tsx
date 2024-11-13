@@ -19,12 +19,18 @@ import { RiInboxUnarchiveLine } from "react-icons/ri";
 import { HiOutlineDocumentReport } from "react-icons/hi";
 import { VscSettingsGear } from "react-icons/vsc";
 import { IoLogOutOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 
 
 
 const SidebarComponent : React.FC = () : React.ReactElement => {
     const [showIcons, setShowIcons] = React.useState<boolean>(true);
+    
+    const logOut = () => {
+        localStorage.removeItem("current-user");
+      };
+
     console.log(showIcons);
     return <StyledContainerSidebar toggle = {showIcons}>
         <StyledBoxFaBars toggle = {showIcons}>
@@ -33,23 +39,32 @@ const SidebarComponent : React.FC = () : React.ReactElement => {
         <StyledBoxFaUserCircle toggle = {showIcons}>
             <FaUserCircle />
         </StyledBoxFaUserCircle>
-        <StyledBoxInserir toggle = {showIcons}>
-            <RiInboxUnarchiveLine/>
-            <StyledBoxRetirada toggle = {showIcons}><p>Retirada</p></StyledBoxRetirada>
-        </StyledBoxInserir>
-        <StyledBoxCaixa2 toggle = {showIcons}>
-            <RiInboxArchiveLine />
-            <StyledBoxEstoque toggle = {showIcons}><p>Estoque</p></StyledBoxEstoque>
-        </StyledBoxCaixa2>
-        <StyledBoxCaixa3 toggle = {showIcons}>
-            <HiOutlineDocumentReport />
-            <StyledBoxRelatorio toggle = {showIcons}><p>Relatório</p></StyledBoxRelatorio>
-        </StyledBoxCaixa3>
-        <StyledBoxCaixa4 toggle = {showIcons}>
-            <VscSettingsGear />
-            <StyledBoxConfig toggle = {showIcons}><p>Configurações</p></StyledBoxConfig>
-        </StyledBoxCaixa4>
-        <StyledBoxCaixa5 toggle = {showIcons}>
+        <Link to ="/retirada">
+            <StyledBoxInserir toggle = {showIcons}>
+                <RiInboxUnarchiveLine/>
+                <StyledBoxRetirada toggle = {showIcons}><p>Retirada</p></StyledBoxRetirada>
+            </StyledBoxInserir>
+        </Link>
+
+        <Link to = "/estoque">
+            <StyledBoxCaixa2 toggle = {showIcons}>
+                <RiInboxArchiveLine />
+                <StyledBoxEstoque toggle = {showIcons}><p>Estoque</p></StyledBoxEstoque>
+            </StyledBoxCaixa2>
+        </Link>
+        <Link to = "#">
+            <StyledBoxCaixa3 toggle = {showIcons}>
+                <HiOutlineDocumentReport />
+                <StyledBoxRelatorio toggle = {showIcons}><p>Relatório</p></StyledBoxRelatorio>
+            </StyledBoxCaixa3>
+        </Link>
+        <Link to = "#">
+            <StyledBoxCaixa4 toggle = {showIcons}>
+                <VscSettingsGear />
+                <StyledBoxConfig toggle = {showIcons}><p>Configurações</p></StyledBoxConfig>
+            </StyledBoxCaixa4>
+        </Link>
+        <StyledBoxCaixa5 href="/" onClick={logOut} toggle = {showIcons}>
             <IoLogOutOutline />
             <StyledBoxLogOut toggle = {showIcons}><p>LogOut</p></StyledBoxLogOut>
         </StyledBoxCaixa5>

@@ -21,9 +21,8 @@ export const StyledContainerSidebar = styled.nav <propsSidebar>`
 
   
     max-width: ${(props) => {return props.toggle ? '5vw':'20vw'}};
-    justify-content: ${(props) => {return props.toggle ? 'center':'left'}};
     align-items: ${(props) => {return props.toggle ? 'center':'flex-start'}};
-    padding: ${(props) => {return props.toggle ? '9px 5px 0px 5px':'20px 5px 0px 5px'}};
+    padding: ${(props) => {return props.toggle ? '20px 5px 0px 5px':'20px 5px 0px 5px'}};
 
 `;
 
@@ -54,7 +53,7 @@ export const StyledBoxFaUserCircle = styled.div <propsSidebar>`
     
 `;
 
-export const StyledBoxInserir = styled.div <propsSidebar>`
+export const StyledBoxInserir = styled.a <propsSidebar>`
     & svg{
         color: white;
         font-size: 50px;
@@ -66,9 +65,9 @@ export const StyledBoxInserir = styled.div <propsSidebar>`
     border-radius: 6px;
     cursor: pointer;
 
-    padding: ${(props) => {return props.toggle ? '10px 16px 10px 16px':'10px 0px 10px 16px'}};
+    padding: ${(props) => {return props.toggle ? '10px 16px 10px 16px':'10px 0px 10px 18px'}};
     width: ${(props) => {return props.toggle ? 'auto':'19.4vw'}};
-    margin-top: ${(props) => {return props.toggle ? '65px':'40px'}};
+    margin-top: ${(props) => {return props.toggle ? '66px':'40px'}};
     flex-direction: ${(props) => {return props.toggle ? 'column':'row'}};
 
     &:hover {
@@ -90,7 +89,7 @@ export const StyledBoxRetirada = styled.div <propsSidebar>`
     }
 `;
 
-export const StyledBoxCaixa2 = styled.div <propsSidebar>`
+export const StyledBoxCaixa2 = styled.a <propsSidebar>`
     & svg{
         color: white;
         font-size: 50px;
@@ -102,7 +101,7 @@ export const StyledBoxCaixa2 = styled.div <propsSidebar>`
     border-radius: 6px;
     cursor: pointer;
 
-    padding: ${(props) => {return props.toggle ? '10px 16px 10px 16px':'10px 0px 10px 16px'}};
+    padding: ${(props) => {return props.toggle ? '10px 16px 10px 16px':'10px 0px 10px 18px'}};
     width: ${(props) => {return props.toggle ? 'auto':'19.4vw'}};
     flex-direction: ${(props) => {return props.toggle ? 'column':'row'}};
 
@@ -137,7 +136,7 @@ export const StyledBoxCaixa3 = styled.div <propsSidebar>`
     border-radius: 6px;
     cursor: pointer;
 
-    padding: ${(props) => {return props.toggle ? '10px 16px 10px 16px':'10px 0px 10px 16px'}};
+    padding: ${(props) => {return props.toggle ? '10px 16px 10px 16px':'10px 0px 10px 18px'}};
     width: ${(props) => {return props.toggle ? 'auto':'19.4vw'}};
     flex-direction: ${(props) => {return props.toggle ? 'column':'row'}};
 
@@ -165,14 +164,14 @@ export const StyledBoxCaixa4 = styled.div <propsSidebar>`
         color: white;
         font-size: 45px;
     }
-    margin-top: 40px;
     display: flex;
     flex-direction: row;
     align-items: center;
     border-radius: 6px;
     cursor: pointer;
 
-    padding: ${(props) => {return props.toggle ? '12px 16px 12px 18px':'12px 0px 12px 20px'}};
+    margin-top: ${(props) => {return props.toggle ? '42px':'40px'}};
+    padding: ${(props) => {return props.toggle ? '10px 12px 10px 10px':'12px 0px 12px 19px'}};
     width: ${(props) => {return props.toggle ? 'auto':'19.4vw'}};
     flex-direction: ${(props) => {return props.toggle ? 'column':'row'}};
 
@@ -188,14 +187,14 @@ export const StyledBoxConfig = styled.div <propsSidebar>`
     font-size: 28px;
     font-weight: 500;
 
-    padding: ${(props) => {return props.toggle ? '0px 0px 0px 63px':'0 0 0 0'}};
+    padding: ${(props) => {return props.toggle ? '0px 0px 0px 63px':'0 0 0 63px'}};
 
     & p{
         display: ${(props) => {return !props.toggle ? 'block':'none'}};
     }
 `;
 
-export const StyledBoxCaixa5 = styled.div <propsSidebar>`
+export const StyledBoxCaixa5 = styled.a <propsSidebar>`
     & svg{
         color: white;
         font-size: 45px;
@@ -207,7 +206,8 @@ export const StyledBoxCaixa5 = styled.div <propsSidebar>`
     border-radius: 6px;
     cursor: pointer;
 
-    padding: ${(props) => {return props.toggle ? '10px 18px 10px 20px':'10px 0px 10px 20px'}};
+    margin-top: ${(props) => {return props.toggle ? '220px':'218px'}};
+    padding: ${(props) => {return props.toggle ? '10px 18px 10px 20px':'10px 0px 10px 21px'}};
     width: ${(props) => {return props.toggle ? 'auto':'19.4vw'}};
     flex-direction: ${(props) => {return props.toggle ? 'column':'row'}};
     
