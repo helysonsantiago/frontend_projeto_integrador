@@ -1,15 +1,68 @@
 {
-    "usuario": [
-      { "id": 1, "email": "helysontest@gmail.com", "password": "Testando", "nome":"Helyson Santiago"}
-    ],
-    "estoque":[
-      { "id": 144424, "nome": "Resina Comp", "quantidade": 2, "preco": 15.00 , "descricao":" Gato sarado"},
-      { "id": 25353535, "nome": "Resina Comp", "quantidade": 2, "preco": 15.00 , "descricao":" Gato sarado"},
-      { "id": 6363636, "nome": "Resina Comp", "quantidade": 2, "preco": 15.00 , "descricao":" Gato sarado"},
-      { "id": 24242, "nome": "Resina Comp", "quantidade": 2, "preco": 15.00 , "descricao":" Gato sarado"},
-      { "id": 630950395, "nome": "Resina Comp", "quantidade": 2, "preco": 15.00 , "descricao":" Gato sarado"},
-      { "id": 229424, "nome": "Resina Comp", "quantidade": 2, "preco": 15.00 , "descricao":" Gato sarado"},
-      { "id": 1292822, "nome": "Resina Comp", "quantidade": 2, "preco": 15.00 , "descricao":" Gato sarado"}
-    ]
-  }
-  
+  "usuario": [
+    {
+      "id": 1,
+      "email": "helysontest@gmail.com",
+      "password": "Testando",
+      "nome": "Helyson Santiago"
+    }
+  ],
+  "estoque": [
+    {
+      "id": 144424,
+      "nome": "Resina Comp",
+      "quantidade": 2,
+      "preco": 15.0,
+      "descricao": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.",
+      "imagemUrl": " ../assets/clinica.jpg"
+    },
+    {
+      "id": 25353535,
+      "nome": "Resina Comp",
+      "quantidade": 2,
+      "preco": 15.0,
+      "descricao": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.",
+      "imagemUrl": "../assets/clinica.jpg"
+    },
+    {
+      "id": 6363636,
+      "nome": "Resina Comp",
+      "quantidade": 2,
+      "preco": 15.0,
+      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.",
+      "imagemUrl": " ../assets/clinica.jpg"
+    },
+    {
+      "id": 24242,
+      "nome": "Resina Comp",
+      "quantidade": 2,
+      "preco": 15.0,
+      "descricao": " Gato sarado",
+      "imagemUrl": " ../assets/clinica.jpg"
+    },
+    {
+      "id": 630950395,
+      "nome": "Resina Comp",
+      "quantidade": 2,
+      "preco": 15.0,
+      "descricao": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.",
+      "imagemUrl": " ../assets/clinica.jpg"
+    },
+    {
+      "id": 229424,
+      "nome": "Resina Comp",
+      "quantidade": 2,
+      "preco": 15.0,
+      "descricao": " Gato sarado",
+      "imagemUrl": " ../assets/clinica.jpg"
+    },
+    {
+      "id": 1292822,
+      "nome": "Resina Comp",
+      "quantidade": 2,
+      "preco": 15.0,
+      "descricao": " Gato sarado",
+      "imagemUrl": " ../assets/clinica.jpg"
+    }
+  ]
+}

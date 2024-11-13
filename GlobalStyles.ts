@@ -22,6 +22,7 @@ const GlobalStyles = createGlobalStyle`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-synthesis: none;
+  overflow-x: hidden;
   text-rendering: optimizeLegibility;
 }
 

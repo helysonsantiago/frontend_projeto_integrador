@@ -3,7 +3,6 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { stockStates } from "../types/stock/stockType";
 import { responseApiStock } from "../types/response-api/responseApiTypes";
 import StockService from "../services/StockService";
-
 const initialState: stockStates = {
   stock: [],
   error_stock: false,

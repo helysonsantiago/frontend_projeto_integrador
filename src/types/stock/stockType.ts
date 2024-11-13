@@ -4,6 +4,7 @@ export type stockModel = {
   quantidade: number;
   preco: number;
   descricao: string;
+  imagemUrl : string;
 };
 
 export type stockStates = {
