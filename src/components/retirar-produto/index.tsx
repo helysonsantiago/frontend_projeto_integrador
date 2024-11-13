@@ -34,7 +34,7 @@ const Retirada = () => {
 
         console.log("Novo item de histórico:", novoHistorico); 
 
-        // Adiciona o novo item à lista de históricos e limpa os campos
+        
         setHistorico([novoHistorico, ...historico]);
         setCodigo("");
         setProfissional("");
