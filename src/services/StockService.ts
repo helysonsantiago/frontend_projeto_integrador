@@ -22,7 +22,7 @@ class StockService {
         quantidade,
         preco,
         nome,
-        imagemUrl
+        imagemUrl,
       };
 
       const response = await axios.put(
@@ -38,6 +38,21 @@ class StockService {
       return { code: 200, message: "Ok", stock: response.data };
     } catch (error) {
       console.error("Erro ao atualizar item: " + updatedData.id, error);
+      return { code: 500, message: "Erro ao solicitar estoque" };
+    }
+  }
+
+  static async newItemStock(newItem: stockModel): Promise<responseApiStock> {
+    try {
+      const response = await axios.post(`${BASE_URL}estoque`, newItem, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      return { code: 200, message: "Ok", stock: response.data };
+    } catch (error) {
+      console.error("Erro ao adicionar item" + error);
       return { code: 500, message: "Erro ao solicitar estoque" };
     }
   }

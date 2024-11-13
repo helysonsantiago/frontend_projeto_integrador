@@ -7,12 +7,7 @@ import { stockModel, stockStates } from "../types/stock/stockType";
 import { StyledBoxNewItemStock } from "./styled-new-item-stock";
 import img from "../../src/assets/imgDefault.png";
 import { CustomTsDispatch } from "../hooks/dispatch";
-import {
-  getStock,
-  resetStock,
-  updateItemStock,
-  updateList,
-} from "../slices/StockSlice";
+import { resetStock, updateItemStock, updateList } from "../slices/StockSlice";
 import { toast } from "react-toastify";
 interface propsUpdateItemModal {
   showUpdateModal: () => void;
@@ -22,7 +17,7 @@ interface propsUpdateItemModal {
 const UpdateItemModalStock: React.FC<propsUpdateItemModal> = (
   props: propsUpdateItemModal
 ) => {
-  const { stock, success_stock, error_stock } = Redux.useSelector(
+  const { success_stock } = Redux.useSelector(
     (state: { stockStore: stockStates }) => state.stockStore
   );
 
@@ -33,7 +28,6 @@ const UpdateItemModalStock: React.FC<propsUpdateItemModal> = (
   );
   const [qtd, setQtd] = React.useState<number>(props.item?.quantidade || 0);
   const [name, setName] = React.useState<string>(props.item?.nome || "");
-  const [close, setClose] = React.useState<bollean>(false);
   const handleDescriptionChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -69,7 +63,6 @@ const UpdateItemModalStock: React.FC<propsUpdateItemModal> = (
     const notify = () => {
       if (typeof success_stock === "string") toast.success(success_stock);
       dispatch(updateList(newItem));
-      setClose(!close);
     };
     notify();
     const timer = setTimeout(() => {

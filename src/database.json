@@ -9,10 +9,10 @@
   ],
   "estoque": [
     {
-      "descricao": "aqui",
+      "descricao": "aquiw",
       "quantidade": 5,
       "preco": 15,
-      "nome": "testandcwo",
+      "nome": "cwcwc",
       "imagemUrl": " ../assets/clinica.jpg",
       "id": "144424"
     },
@@ -57,12 +57,44 @@
       "imagemUrl": " ../assets/clinica.jpg"
     },
     {
-      "id": "1292822",
-      "nome": "Resina Comp",
+      "descricao": " Gato sarado",
       "quantidade": 2,
       "preco": 15,
-      "descricao": " Gato sarado",
-      "imagemUrl": " ../assets/clinica.jpg"
+      "nome": "ww",
+      "imagemUrl": " ../assets/clinica.jpg",
+      "id": "1292822"
+    },
+    {
+      "descricao": "cww",
+      "quantidade": 2,
+      "preco": 0,
+      "nome": "wdwdwc",
+      "imagemUrl": "./",
+      "id": "wdwd"
+    },
+    {
+      "id": "wdwd",
+      "quantidade": 2,
+      "preco": 0,
+      "imagemUrl": "./",
+      "nome": "wdwddw",
+      "descricao": "wddd"
+    },
+    {
+      "id": "wdwd",
+      "quantidade": 2,
+      "preco": 0,
+      "imagemUrl": "./",
+      "nome": "wcwc",
+      "descricao": "cwc"
+    },
+    {
+      "id": "4t4t",
+      "quantidade": 3,
+      "preco": 0,
+      "imagemUrl": "./",
+      "nome": "4t4t",
+      "descricao": "3r3r3r"
     }
   ]
 }

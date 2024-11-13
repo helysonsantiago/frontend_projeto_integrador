@@ -36,6 +36,19 @@ export const updateItemStock = createAsyncThunk(
   }
 );
 
+export const newItemStock = createAsyncThunk(
+  "stock/newItemStock",
+  async (item: stockModel, thunkAPI) => {
+    const data: responseApiStock = await StockService.newItemStock(item);
+    if (data.code === 400) {
+      localStorage.setItem("current-user", "null");
+      return thunkAPI.rejectWithValue(data.message);
+    } else if (data.code === 200) {
+      return thunkAPI.fulfillWithValue(data.stock);
+    }
+  }
+);
+
 export const StockSlice = createSlice({
   name: "stock",
   initialState,
@@ -45,6 +58,7 @@ export const StockSlice = createSlice({
       state.loading_stock = false;
       state.success_stock = false;
     },
+
     updateList: (state, action) => {
       // Atualiza o estoque
       const updatedStock = state.stock.map((item) =>
@@ -58,7 +72,12 @@ export const StockSlice = createSlice({
 
       state.stock = updatedStock;
     },
+
+    addList: (state, action) => {
+      state.stock.push(action.payload);
+    },
   },
+
   extraReducers: (builder) => {
     builder
       .addCase(getStock.pending, (state) => {
@@ -94,8 +113,24 @@ export const StockSlice = createSlice({
         state.success_stock = false;
         state.loading_stock = false;
         state.stock = [];
+      })
+      .addCase(newItemStock.pending, (state) => {
+        state.error_stock = false;
+        state.loading_stock = true;
+        state.success_stock = false;
+      })
+      .addCase(newItemStock.fulfilled, (state) => {
+        state.error_stock = false;
+        state.success_stock = "Adicionado com sucesso";
+        state.loading_stock = false;
+      })
+      .addCase(newItemStock.rejected, (state, action) => {
+        state.error_stock = action.payload as string;
+        state.success_stock = false;
+        state.loading_stock = false;
+        state.stock = [];
       });
   },
 });
-export const { resetStock, updateList } = StockSlice.actions;
+export const { resetStock, updateList, addList } = StockSlice.actions;
 export default StockSlice.reducer;
