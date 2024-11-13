@@ -17,6 +17,9 @@ class AuthService {
     return {code: 500, message: "Erro na conexão com o servidor"};
    }
   }
+
+  
+
 }
 
 export default AuthService;

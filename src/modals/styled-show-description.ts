@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledContainerShowDescription = styled.main`
+export const StyledContainerShowDescription = styled.div`
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
@@ -48,6 +48,7 @@ export const StyledContainerShowDescription = styled.main`
 
     & img {
       height: 200px;
+      border-radius: 10px;
     }
   }
 `;

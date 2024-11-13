@@ -2,7 +2,7 @@ import React from "react";
 import { StyledContainerShowDescription } from "./styled-show-description";
 //import { IoMdCloseCircle } from "react-icons/io";
 import { stockModel } from "../types/stock/stockType";
-import img from "../../src/assets/clinica.jpg";
+import img from "../../src/assets/imgDefault.png";
 
 interface propsDescriptionModal {
   showModal: () => void;

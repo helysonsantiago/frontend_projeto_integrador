@@ -6,12 +6,14 @@ import {
   StyledTitleEstoque,
 } from "../stock/styled-stock";
 import { CustomTsDispatch } from "../../hooks/dispatch";
-import { getStock } from "../../slices/StockSlice";
+import { getStock, resetStock } from "../../slices/StockSlice";
 import { stockModel, stockStates } from "../../types/stock/stockType";
 import { FaClipboardList } from "react-icons/fa6";
 import { FaPencilAlt } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import ShowDescriptionModal from "../../modals/ShowDescription";
+import NewItemStockModal from "../../modals/NewItemStockModal";
+import UpdateItemModalStock from "../../modals/UpdateItemModalStock";
 const Stock: React.FC = (): React.ReactElement => {
   const dispatch = CustomTsDispatch();
   const { stock, error_stock } = Redux.useSelector(
@@ -21,6 +23,10 @@ const Stock: React.FC = (): React.ReactElement => {
   const [toggle, setToggle] = React.useState<boolean>(true);
   const [inputValue, setInputValue] = React.useState<string>("");
   const [showModal, setShowModal] = React.useState<boolean>(false);
+  const [showModalNewItem, setShowModalNewItem] =
+    React.useState<boolean>(false);
+  const [showModalUpdateItem, setShowModalUpdateItem] =
+    React.useState<boolean>(false);
   const [item, setItem] = React.useState<stockModel | null>(null);
 
   const itemsPerPage = 5;
@@ -67,13 +73,20 @@ const Stock: React.FC = (): React.ReactElement => {
       setToggle(false);
     }
   }, [inputValue]);
+  
 
   React.useEffect(() => {
     dispatch(getStock());
   }, [dispatch, error_stock]);
 
-  const handleModal = () => {
+  const handleDescriptionModal = () => {
     setShowModal(!showModal);
+  };
+  const handleNewItemModal = () => {
+    setShowModalNewItem(!showModalNewItem);
+  };
+  const handleUpdateItemModal = () => {
+    setShowModalUpdateItem(!showModalUpdateItem);
   };
 
   return (
@@ -88,7 +101,9 @@ const Stock: React.FC = (): React.ReactElement => {
           <CiSearch />
           <p>Nº Código...</p>
         </span>
-        <button>ADICIONAR</button>
+        <button onClick={() => setShowModalNewItem(!showModalNewItem)}>
+          ADICIONAR
+        </button>
       </StyledBoxStock>
 
       <table>
@@ -117,7 +132,12 @@ const Stock: React.FC = (): React.ReactElement => {
                 />
               </td>
               <td>
-                <FaPencilAlt />
+                <FaPencilAlt
+                  onClick={() => {
+                    setShowModalUpdateItem(!showModalUpdateItem);
+                    setItem(item);
+                  }}
+                />
               </td>
             </tr>
           ))}
@@ -125,7 +145,16 @@ const Stock: React.FC = (): React.ReactElement => {
       </table>
       {renderPageNumbers()}
       {showModal ? (
-        <ShowDescriptionModal showModal={handleModal} item={item} />
+        <ShowDescriptionModal showModal={handleDescriptionModal} item={item} />
+      ) : null}
+      {showModalNewItem ? (
+        <NewItemStockModal showNewItem={handleNewItemModal} />
+      ) : null}
+      {showModalUpdateItem ? (
+        <UpdateItemModalStock
+          showUpdateModal={handleUpdateItemModal}
+          item={item}
+        />
       ) : null}
     </StyledStockContainer>
   );
