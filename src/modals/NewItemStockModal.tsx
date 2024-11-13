@@ -27,8 +27,8 @@ const NewItemStockModal: React.FC<propsNewItem> = (
   const [nome, setNome] = React.useState<string>("");
   const [descricao, setDescricao] = React.useState<string>("");
   const [code, setCode] = React.useState<string>("");
-  const [qtd, setQtd] = React.useState<number>(0);
-  const [preco, setPreco] = React.useState<number>(0);
+  const [qtd, setQtd] = React.useState<number>();
+  const [preco, setPreco] = React.useState<number>();
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newName = event.target.value;
@@ -56,6 +56,9 @@ const NewItemStockModal: React.FC<propsNewItem> = (
     const newCode = event.target.value;
     setCode(newCode);
   };
+
+  
+
 
   const newItem: stockModel = {
     id: code,
@@ -114,11 +117,18 @@ const NewItemStockModal: React.FC<propsNewItem> = (
         </StyledBoxNewItemStock>
         <StyledBoxNewItemStock>
           <input
-            type="test"
+            type="text"
             placeholder="Descrição"
             value={descricao}
             onChange={handleDescriptionChange}
-          />{" "}
+          />
+           <input
+            type="number"
+            placeholder="Preço"
+            min={1}
+            value={preco}
+            onChange={handlePriceChange}
+          />
           <button onClick={handleNewItem}>ADICIONAR</button>
         </StyledBoxNewItemStock>
       </main>

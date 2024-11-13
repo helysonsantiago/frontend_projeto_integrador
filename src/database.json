@@ -9,10 +9,10 @@
   ],
   "estoque": [
     {
-      "descricao": "aquiw",
+      "descricao": "aquiwcw",
       "quantidade": 5,
-      "preco": 15,
-      "nome": "cwcwc",
+      "preco": 1,
+      "nome": "cw",
       "imagemUrl": " ../assets/clinica.jpg",
       "id": "144424"
     },
@@ -95,6 +95,14 @@
       "imagemUrl": "./",
       "nome": "4t4t",
       "descricao": "3r3r3r"
+    },
+    {
+      "id": "2uyu2i",
+      "quantidade": 1,
+      "preco": 23,
+      "imagemUrl": "./",
+      "nome": "u2y2ui",
+      "descricao": "22heuih2u"
     }
   ]
 }

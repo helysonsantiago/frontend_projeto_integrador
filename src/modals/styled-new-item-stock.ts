@@ -71,8 +71,12 @@ export const StyledBoxNewItemStock = styled.div`
     width: 65%;
   }
   &:nth-child(2) {
-    & input {
-      width: 70%;
+    & input:nth-child(1) {
+      width: 52%;
+    }
+
+    & input:nth-child(2) {
+      width: 15%;
     }
 
     & button {

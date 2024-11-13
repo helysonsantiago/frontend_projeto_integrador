@@ -28,6 +28,8 @@ const UpdateItemModalStock: React.FC<propsUpdateItemModal> = (
   );
   const [qtd, setQtd] = React.useState<number>(props.item?.quantidade || 0);
   const [name, setName] = React.useState<string>(props.item?.nome || "");
+  const [price, setPrice] = React.useState<number>(props.item?.preco || 0);
+
   const handleDescriptionChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -45,14 +47,19 @@ const UpdateItemModalStock: React.FC<propsUpdateItemModal> = (
     setQtd(newQtd);
   };
 
-  const { id, imagemUrl, preco } = props.item || {};
+  const handlePriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newPrice = Number(event.target.value);
+    setPrice(newPrice);
+  };
+
+  const { id, imagemUrl } = props.item || {};
 
   const newItem: stockModel = {
     id: id ? id : "",
     imagemUrl: imagemUrl ? imagemUrl : "",
     quantidade: qtd,
     nome: name,
-    preco: preco ? preco : 0,
+    preco: price,
     descricao: description,
   };
   const handleUpdate = () => {
@@ -100,13 +107,21 @@ const UpdateItemModalStock: React.FC<propsUpdateItemModal> = (
           </div>
         </StyledBoxNewItemStock>
         <StyledBoxNewItemStock>
-          {" "}
           <input
             type="test"
             placeholder="Descrição"
             value={description}
             onChange={handleDescriptionChange}
           />
+
+          <input
+            type="number"
+            placeholder="Preço"
+            min={1}
+            value={price}
+            onChange={handlePriceChange}
+          />
+
           <button onClick={handleUpdate}>Atualizar</button>
         </StyledBoxNewItemStock>
       </main>

@@ -23,6 +23,7 @@ const Stock: React.FC = (): React.ReactElement => {
   const [toggle, setToggle] = React.useState<boolean>(true);
   const [inputValue, setInputValue] = React.useState<string>("");
   const [showModal, setShowModal] = React.useState<boolean>(false);
+
   const [showModalNewItem, setShowModalNewItem] =
     React.useState<boolean>(false);
   const [showModalUpdateItem, setShowModalUpdateItem] =
@@ -66,6 +67,11 @@ const Stock: React.FC = (): React.ReactElement => {
     setInputValue(event.target.value);
   };
 
+
+  const dadosFiltrados = stock.filter((item) =>
+    item.id.toLowerCase().includes(inputValue?.toLowerCase())
+  );
+
   React.useEffect(() => {
     if (inputValue.trim() === "") {
       setToggle(true);
@@ -73,7 +79,6 @@ const Stock: React.FC = (): React.ReactElement => {
       setToggle(false);
     }
   }, [inputValue]);
-  
 
   React.useEffect(() => {
     dispatch(getStock());
@@ -117,30 +122,55 @@ const Stock: React.FC = (): React.ReactElement => {
         </thead>
 
         <tbody>
-          {itensToDisplay.map((item, index) => (
-            <tr key={index}>
-              <td>{item.id}</td>
-              <td>{item.nome}</td>
-              <td>{item.quantidade}</td>
-              <td>R$ {item.preco}</td>
-              <td>
-                <FaClipboardList
-                  onClick={() => {
-                    setShowModal(!showModal);
-                    setItem(item);
-                  }}
-                />
-              </td>
-              <td>
-                <FaPencilAlt
-                  onClick={() => {
-                    setShowModalUpdateItem(!showModalUpdateItem);
-                    setItem(item);
-                  }}
-                />
-              </td>
-            </tr>
-          ))}
+          {dadosFiltrados.length !== 0 && inputValue !== ''
+            ? dadosFiltrados.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.id}</td>
+                  <td>{item.nome}</td>
+                  <td>{item.quantidade}</td>
+                  <td>R$ {item.preco}</td>
+                  <td>
+                    <FaClipboardList
+                      onClick={() => {
+                        setShowModal(!showModal);
+                        setItem(item);
+                      }}
+                    />
+                  </td>
+                  <td>
+                    <FaPencilAlt
+                      onClick={() => {
+                        setShowModalUpdateItem(!showModalUpdateItem);
+                        setItem(item);
+                      }}
+                    />
+                  </td>
+                </tr>
+              ))
+            : itensToDisplay.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.id}</td>
+                  <td>{item.nome}</td>
+                  <td>{item.quantidade}</td>
+                  <td>R$ {item.preco}</td>
+                  <td>
+                    <FaClipboardList
+                      onClick={() => {
+                        setShowModal(!showModal);
+                        setItem(item);
+                      }}
+                    />
+                  </td>
+                  <td>
+                    <FaPencilAlt
+                      onClick={() => {
+                        setShowModalUpdateItem(!showModalUpdateItem);
+                        setItem(item);
+                      }}
+                    />
+                  </td>
+                </tr>
+              ))}
         </tbody>
       </table>
       {renderPageNumbers()}
