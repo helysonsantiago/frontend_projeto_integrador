@@ -4,7 +4,7 @@ interface propsSidebar{
     toggle:boolean;
 }
 
-export const StyledContainerSidebar = styled.nav <propsSidebar>`
+export const StyledContainerSidebar = styled.div<propsSidebar>`
 
 
   min-height: 100vh;

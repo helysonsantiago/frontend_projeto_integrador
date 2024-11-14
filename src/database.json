@@ -2,17 +2,17 @@
   "usuario": [
     {
       "id": "1",
-      "email": "helysontest@gmail.com",
-      "password": "Testando",
-      "nome": "Helyson Santiago"
+      "email": "admin@gmail.com",
+      "password": "AdminTest",
+      "nome": "Admin test"
     }
   ],
   "estoque": [
     {
       "descricao": "aquiwcw",
       "quantidade": 5,
-      "preco": 1,
-      "nome": "cw",
+      "preco": 36,
+      "nome": "cwwdw",
       "imagemUrl": " ../assets/clinica.jpg",
       "id": "144424"
     },

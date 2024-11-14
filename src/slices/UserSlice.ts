@@ -1,21 +1,20 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-import { stockModel, stockStates } from "../types/stock/stockType";
 import { responseApiStock } from "../types/response-api/responseApiTypes";
-import StockService from "../services/StockService";
+import { userStates } from "../types/user/usertypes";
 
 
-const initialState: stockStates = {
-  stock: [],
-  error_stock: false,
-  success_stock: false,
-  loading_stock: false,
+const initialState: userStates = {
+  user: null,
+  error_user: false,
+  success_user: false,
+  loading_user: false,
 };
 
-export const getStock = createAsyncThunk(
-  "stock/getStock",
+export const getUser = createAsyncThunk(
+  "stock/getUser",
   async (_, thunkAPI) => {
-    const data: responseApiStock = await StockService.getStock();
+    const data: responseApiStock = await UserService.getUser();
     if (data.code === 400) {
       localStorage.setItem("current-user", "null");
       return thunkAPI.rejectWithValue(data.message);
@@ -25,59 +24,18 @@ export const getStock = createAsyncThunk(
   }
 );
 
-export const updateItemStock = createAsyncThunk(
-  "stock/updateItemStock",
-  async (item: stockModel, thunkAPI) => {
-    const data: responseApiStock = await StockService.updateItem(item);
-    if (data.code === 400) {
-      localStorage.setItem("current-user", "null");
-      return thunkAPI.rejectWithValue(data.message);
-    } else if (data.code === 200) {
-      return thunkAPI.fulfillWithValue(data.stock);
-    }
-  }
-);
 
-export const newItemStock = createAsyncThunk(
-  "stock/newItemStock",
-  async (item: stockModel, thunkAPI) => {
-    const data: responseApiStock = await StockService.newItemStock(item);
-    if (data.code === 400) {
-      localStorage.setItem("current-user", "null");
-      return thunkAPI.rejectWithValue(data.message);
-    } else if (data.code === 200) {
-      return thunkAPI.fulfillWithValue(data.stock);
-    }
-  }
-);
 
-export const StockSlice = createSlice({
-  name: "stock",
+export const userSlice = createSlice({
+  name: "user",
   initialState,
   reducers: {
-    resetStock: (state) => {
+    resetUser: (state) => {
       state.error_stock = false;
       state.loading_stock = false;
       state.success_stock = false;
     },
 
-    updateList: (state, action) => {
-      // Atualiza o estoque
-      const updatedStock = state.stock.map((item) =>
-        item.id === action.payload.id ? { ...item, ...action.payload } : item
-      );
-
-      // Se o item não existir, adiciona o novo item
-      if (!updatedStock.some((item) => item.id === action.payload.id)) {
-        updatedStock.push(action.payload);
-      }
-
-      state.stock = updatedStock;
-    },
-
-    addList: (state, action) => {
-      state.stock.push(action.payload);
-    },
   },
 
   extraReducers: (builder) => {

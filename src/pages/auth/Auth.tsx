@@ -32,7 +32,7 @@ const Auth = (): React.ReactElement => {
       .email("Preencha com um email válido."),
     password: Yup.string()
       .required("Informe sua senha.")
-      .min(8, "A senha deve ter pelo menos 6 caracteres.")
+      .min(8, "A senha deve ter pelo menos 8 caracteres.")
       .matches(/[A-Z]/, "A senha deve conter pelo menos uma letra maiúscula."),
   });
 

@@ -1,25 +1,23 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import AuthService from '../services/AuthService';
-import { authState, userCredentials } from '../types/auth/authType';
-import { responseApiType } from '../types/response-api/responseApiTypes';
-
-
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import AuthService from "../services/AuthService";
+import { authState, userCredentials } from "../types/auth/authType";
+import { responseApiType } from "../types/response-api/responseApiTypes";
 
 const initialState: authState = {
-  auth: localStorage.getItem('current-user') === 'active' ? true : false,
+  auth: localStorage.getItem("current-user") === "active" ? true : false,
   error_login: false,
   success_login: false,
   loading_login: false,
 };
 
 export const loginUSer = createAsyncThunk(
-  'login/loginUser',
+  "login/loginUser",
   async (dt: userCredentials, thunkAPI) => {
-    const data : responseApiType  = await AuthService.signin({
+    const data: responseApiType = await AuthService.signin({
       email: dt.email,
       password: dt.password,
     });
-    if (data.code === 400 || data.code === 500 ) {
+    if (data.code === 400 || data.code === 500) {
       return thunkAPI.rejectWithValue(data.message);
     } else if (data.code === 200) {
       return thunkAPI.fulfillWithValue(data.message);
@@ -28,7 +26,7 @@ export const loginUSer = createAsyncThunk(
 );
 
 export const AuthSlice = createSlice({
-  name: 'auth',
+  name: "auth",
   initialState,
   reducers: {
     resetAuth: (state) => {

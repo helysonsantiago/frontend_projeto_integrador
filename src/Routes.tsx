@@ -6,6 +6,7 @@ import Auth from "./pages/auth/Auth";
 import { authState } from "./types/auth/authType";
 import Retirada from "./pages/retirar-produto";
 import Stock from "./pages/stock/Stock";
+import Configs from "./pages/configs/Configs";
 
 const AppRoutes: React.FC = (): JSX.Element => {
   const { auth } = Redux.useSelector(
@@ -28,6 +29,11 @@ const AppRoutes: React.FC = (): JSX.Element => {
         <Route
           path="/estoque"
           element={!auth ? <Navigate to={"/"} /> : <Stock />}
+        />
+
+        <Route
+          path="/configuracoes"
+          element={!auth ? <Navigate to={"/"} /> : <Configs />}
         />
       </Routes>
     </>

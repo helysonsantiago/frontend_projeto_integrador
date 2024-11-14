@@ -58,7 +58,7 @@ const SidebarComponent : React.FC = () : React.ReactElement => {
                 <StyledBoxRelatorio toggle = {showIcons}><p>Relatório</p></StyledBoxRelatorio>
             </StyledBoxCaixa3>
         </Link>
-        <Link to = "#">
+        <Link to = "/configuracoes">
             <StyledBoxCaixa4 toggle = {showIcons}>
                 <VscSettingsGear />
                 <StyledBoxConfig toggle = {showIcons}><p>Configurações</p></StyledBoxConfig>
