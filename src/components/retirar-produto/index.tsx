@@ -6,7 +6,6 @@ import {
     StyledContainerRetirada,
     StyledContentRetirada,
     StyledHistoricoContainer,
-    StyledHistoricoDetails,
     StyledHistoricoItem,
     StyledHistoricoTitle,
     StyledTitleRetirada,
@@ -101,22 +100,33 @@ const Retirada = () => {
  <div>        
  <StyledHistoricoTitle>
         <h2>Histórico</h2>
+        <hr className="linha-horizontal" />
     </StyledHistoricoTitle>
     
     {historico.length > 0 ? (
         <StyledHistoricoContainer>
             {historico.map((item, index) => (
-                <StyledHistoricoItem key={index}>
-                    <div className="historico-header">
-                        <p><strong>Código:</strong> {item.codigo}</p>
-                        <p><strong>Profissional:</strong> {item.profissional}</p>
-                    </div>
-                    <StyledHistoricoDetails>
-                        <p><strong>Descrição:</strong> {item.descricao}</p>
-                        <p><strong>Nome do Produto:</strong> {item.nomeProduto}</p>
-                        <p><strong>Quantidade:</strong> {item.quantidade}</p>
-                    </StyledHistoricoDetails>
-                </StyledHistoricoItem>
+               <StyledHistoricoItem key={index}>
+               <div className="top-row">
+                   <div className="info">
+                     <p>Código: <span>{item.codigo}</span></p>
+                   </div>
+                   <div className="info">
+                     <p>Profissional: <span>{item.profissional}</span></p>
+                   </div>
+                   <div className="info">
+                     <p>Descrição: <span>{item.descricao}</span></p>
+                   </div>
+               </div>
+               <div className="bottom-row">
+                   <div className="info">
+                     <p>Nome do Produto: <span>{item.nomeProduto}</span></p>
+                   </div>
+                   <div className="info">
+                     <p>Quantidade: <span>{item.quantidade}</span></p>
+                   </div>
+               </div>
+             </StyledHistoricoItem>
             ))}
         </StyledHistoricoContainer>
     ) : (
