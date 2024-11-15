@@ -1,6 +1,10 @@
 import React from "react";
 import * as Redux from "react-redux";
+<<<<<<< HEAD
 import SidebarComponent from "./components/sidebar/SidebarComponent";
+=======
+// import SidebarComponent from './components/sidebar/SidebarComponent';
+>>>>>>> origin/dev_luiz
 import { Navigate, Route, Routes } from "react-router-dom";
 import Auth from "./pages/auth/Auth";
 import { authState } from "./types/auth/authType";
@@ -15,7 +19,11 @@ const AppRoutes: React.FC = (): JSX.Element => {
 
   return (
     <>
+<<<<<<< HEAD
       {auth ? <SidebarComponent /> : null}
+=======
+       {/* {auth ? <SidebarComponent/> : null}  */}
+>>>>>>> origin/dev_luiz
 
       <Routes>
         <Route

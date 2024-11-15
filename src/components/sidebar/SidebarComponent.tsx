@@ -6,8 +6,6 @@ import { StyledContainerSidebar
     , StyledBoxRetirada
     , StyledBoxCaixa2
     , StyledBoxEstoque
-    , StyledBoxCaixa3
-    , StyledBoxRelatorio
     , StyledBoxCaixa4
     , StyledBoxConfig
     , StyledBoxCaixa5
@@ -16,7 +14,7 @@ import { FaBars } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import { RiInboxArchiveLine } from "react-icons/ri";
 import { RiInboxUnarchiveLine } from "react-icons/ri";
-import { HiOutlineDocumentReport } from "react-icons/hi";
+
 import { VscSettingsGear } from "react-icons/vsc";
 import { IoLogOutOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -51,12 +49,6 @@ const SidebarComponent : React.FC = () : React.ReactElement => {
                 <RiInboxArchiveLine />
                 <StyledBoxEstoque toggle = {showIcons}><p>Estoque</p></StyledBoxEstoque>
             </StyledBoxCaixa2>
-        </Link>
-        <Link to = "#">
-            <StyledBoxCaixa3 toggle = {showIcons}>
-                <HiOutlineDocumentReport />
-                <StyledBoxRelatorio toggle = {showIcons}><p>Relatório</p></StyledBoxRelatorio>
-            </StyledBoxCaixa3>
         </Link>
         <Link to = "/configuracoes">
             <StyledBoxCaixa4 toggle = {showIcons}>

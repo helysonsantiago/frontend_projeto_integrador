@@ -48,7 +48,7 @@ export const StyledContainerForm = styled.form`
     width: 160vh;
     position: relative;
     top: 0;
-
+   padding: 0%;
    
 
     .ioimage {
@@ -118,3 +118,77 @@ flex-direction: column;
 flex-wrap: wrap;
 
 `;
+
+
+
+export const StyledHistoricoTitle = styled.h2`
+    font-size: 20px;
+    font-weight: 600;
+    color: #193236;
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 235px;
+    padding-top: 30px;
+
+    .linha-horizontal {
+    border-top: 4px solid #193236; 
+    width: 1450px;
+    margin: 20px auto; 
+    }
+   
+`;
+
+export const StyledHistoricoContainer = styled.div`
+    margin-left: 230px;
+    width: 96%;
+    display: flex;
+    flex-direction: column;
+    
+`;
+
+export const StyledHistoricoItem = styled.div`
+    background-color: white;
+    border: 2px solid #2B555C;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    width: 90%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+
+
+
+    .info {
+        padding: 5px;
+        background-color: #F1F1F1;
+        border: 1px solid #2B555C;
+        border-radius: 10px;
+        text-align: center;
+        width: 400px;
+        height: 70px;
+    }
+        .info span {
+        font-weight: bold;
+        color: #333; /* Exemplo de cor */
+    }
+
+    .top-row,.bottom-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        justify-content: center; /* Centraliza os itens */
+         margin-bottom: 10px; /* Espaçamento entre as linhas */
+        
+    }
+    .top-row{
+        height: 40px;
+        margin-bottom: 40px;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+`;
+
+
+
