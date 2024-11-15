@@ -20,9 +20,8 @@ const Retirada = () => {
     const [historico, setHistorico] = useState([]);
 
     const handleRetirar = () => {
-        console.log("Função handleRetirar foi chamada!"); 
-        
-       
+        console.log("Função handleRetirar foi chamada!");
+
         const novoHistorico = {
             codigo,
             profissional,
@@ -31,9 +30,8 @@ const Retirada = () => {
             quantidade,
         };
 
-        console.log("Novo item de histórico:", novoHistorico); 
+        console.log("Novo item de histórico:", novoHistorico);
 
-        
         setHistorico([novoHistorico, ...historico]);
         setCodigo("");
         setProfissional("");
@@ -90,49 +88,45 @@ const Retirada = () => {
                             Retirar <BiArchiveIn />
                         </span>
                     </div>
-                    
                 </StyledContentRetirada>
-                
             </StyledContainerForm>
-   
 
+            <div>
+                <StyledHistoricoTitle>
+                    <h2>Histórico</h2>
+                    <hr className="linha-horizontal" />
+                </StyledHistoricoTitle>
 
- <div>        
- <StyledHistoricoTitle>
-        <h2>Histórico</h2>
-        <hr className="linha-horizontal" />
-    </StyledHistoricoTitle>
-    
-    {historico.length > 0 ? (
-        <StyledHistoricoContainer>
-            {historico.map((item, index) => (
-               <StyledHistoricoItem key={index}>
-               <div className="top-row">
-                   <div className="info">
-                     <p>Código: <span>{item.codigo}</span></p>
-                   </div>
-                   <div className="info">
-                     <p>Profissional: <span>{item.profissional}</span></p>
-                   </div>
-                   <div className="info">
-                     <p>Descrição: <span>{item.descricao}</span></p>
-                   </div>
-               </div>
-               <div className="bottom-row">
-                   <div className="info">
-                     <p>Nome do Produto: <span>{item.nomeProduto}</span></p>
-                   </div>
-                   <div className="info">
-                     <p>Quantidade: <span>{item.quantidade}</span></p>
-                   </div>
-               </div>
-             </StyledHistoricoItem>
-            ))}
-        </StyledHistoricoContainer>
-    ) : (
-        <p>Nenhuma retirada registrada.</p>
-    )}
-</div>
+                {historico.length > 0 ? (
+                    <StyledHistoricoContainer>
+                        {historico.map((item, index) => (
+                            <StyledHistoricoItem key={index}>
+                                <div className="top-row">
+                                    <div className="info">
+                                        <p>Código: <span>{item.codigo}</span></p>
+                                    </div>
+                                    <div className="info">
+                                        <p>Profissional: <span>{item.profissional}</span></p>
+                                    </div>
+                                    <div className="info">
+                                        <p>Descrição: <span>{item.descricao}</span></p>
+                                    </div>
+                                </div>
+                                <div className="bottom-row">
+                                    <div className="info">
+                                        <p>Nome do Produto: <span>{item.nomeProduto}</span></p>
+                                    </div>
+                                    <div className="info">
+                                        <p>Quantidade: <span>{item.quantidade}</span></p>
+                                    </div>
+                                </div>
+                            </StyledHistoricoItem>
+                        ))}
+                    </StyledHistoricoContainer>
+                ) : (
+                    <p>Nenhuma retirada registrada.</p>
+                )}
+            </div>
         </StyledContainerRetirada>
     );
 };

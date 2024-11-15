@@ -160,13 +160,12 @@ export const StyledHistoricoItem = styled.div`
 
 
     .info {
-        margin-bottom: 10px;
         padding: 5px;
         background-color: #F1F1F1;
         border: 1px solid #2B555C;
         border-radius: 10px;
         text-align: center;
-        width: 250px;
+        width: 400px;
         height: 70px;
     }
         .info span {
@@ -177,9 +176,14 @@ export const StyledHistoricoItem = styled.div`
     .top-row,.bottom-row {
         display: grid;
         grid-template-columns: repeat(3, 1fr); 
+        justify-content: center; /* Centraliza os itens */
+         margin-bottom: 10px; /* Espaçamento entre as linhas */
         
     }
-
+    .top-row{
+        height: 40px;
+        margin-bottom: 40px;
+    }
 
     &:hover {
         transform: translateY(-5px);
