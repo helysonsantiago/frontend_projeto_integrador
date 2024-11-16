@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-import { responseApiStock } from "../types/response-api/responseApiTypes";
+import { responseApiType } from "../types/response-api/responseApiTypes";
 import { userStates } from "../types/user/usertypes";
-
+import UserService from "../services/UserService";
+import { userUpdate } from "../pages/general-configs/GeneralConfigs";
 
 const initialState: userStates = {
   user: null,
@@ -11,86 +12,48 @@ const initialState: userStates = {
   loading_user: false,
 };
 
-export const getUser = createAsyncThunk(
-  "stock/getUser",
-  async (_, thunkAPI) => {
-    const data: responseApiStock = await UserService.getUser();
+export const updateUser = createAsyncThunk(
+  "user/updateUser",
+  async (user : userUpdate, thunkAPI) => {
+    const data: responseApiType = await UserService.getUserByID(user);
     if (data.code === 400) {
       localStorage.setItem("current-user", "null");
       return thunkAPI.rejectWithValue(data.message);
     } else if (data.code === 200) {
-      return thunkAPI.fulfillWithValue(data.stock);
+      return thunkAPI.fulfillWithValue(data.message);
     }
   }
 );
-
-
 
 export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
     resetUser: (state) => {
-      state.error_stock = false;
-      state.loading_stock = false;
-      state.success_stock = false;
+      state.error_user = false;
+      state.loading_user = false;
+      state.success_user = false;
     },
-
   },
 
   extraReducers: (builder) => {
     builder
-      .addCase(getStock.pending, (state) => {
-        state.error_stock = false;
-        state.loading_stock = true;
-        state.success_stock = false;
-        state.stock = [];
+      .addCase(updateUser.pending, (state) => {
+        state.error_user = false;
+        state.loading_user = true;
+        state.success_user = false;
       })
-      .addCase(getStock.fulfilled, (state, action) => {
-        state.error_stock = false;
-        state.success_stock = true;
-        state.loading_stock = false;
-        state.stock = action.payload as [];
+      .addCase(updateUser.fulfilled, (state) => {
+        state.error_user = false;
+        state.success_user = true;
+        state.loading_user = false;
       })
-      .addCase(getStock.rejected, (state, action) => {
-        state.error_stock = action.payload as string;
-        state.success_stock = false;
-        state.loading_stock = false;
-        state.stock = [];
-      })
-      .addCase(updateItemStock.pending, (state) => {
-        state.error_stock = false;
-        state.loading_stock = true;
-        state.success_stock = false;
-      })
-      .addCase(updateItemStock.fulfilled, (state) => {
-        state.error_stock = false;
-        state.success_stock = "Atualizado com sucesso";
-        state.loading_stock = false;
-      })
-      .addCase(updateItemStock.rejected, (state, action) => {
-        state.error_stock = action.payload as string;
-        state.success_stock = false;
-        state.loading_stock = false;
-        state.stock = [];
-      })
-      .addCase(newItemStock.pending, (state) => {
-        state.error_stock = false;
-        state.loading_stock = true;
-        state.success_stock = false;
-      })
-      .addCase(newItemStock.fulfilled, (state) => {
-        state.error_stock = false;
-        state.success_stock = "Adicionado com sucesso";
-        state.loading_stock = false;
-      })
-      .addCase(newItemStock.rejected, (state, action) => {
-        state.error_stock = action.payload as string;
-        state.success_stock = false;
-        state.loading_stock = false;
-        state.stock = [];
+      .addCase(updateUser.rejected, (state, action) => {
+        state.error_user = action.payload as string;
+        state.success_user = false;
+        state.loading_user = false;
       });
   },
 });
-export const { resetStock, updateList, addList } = StockSlice.actions;
-export default StockSlice.reducer;
+
+export default userSlice.reducer;

@@ -12,9 +12,15 @@ class AuthService {
         response.data[0]?.password === login.password
       ) {
         localStorage.setItem("current-user", "active");
-        sessionStorage.setItem("user_name", response.data[0]?.nome);
-        sessionStorage.setItem("user_email", response.data[0]?.email);
-        sessionStorage.setItem("user_id", response.data[0]?.id);
+        sessionStorage.setItem(
+          "user_name",
+          response.data[0]?.nome.toString()
+        );
+        sessionStorage.setItem(
+          "user_email",
+          response.data[0]?.email.toString()
+        );
+        sessionStorage.setItem("user_id", response.data[0]?.id.toString());
         sessionStorage.setItem("password", "*************");
 
         return { code: 200, message: "Login efetuado com sucesso!" };

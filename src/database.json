@@ -4,105 +4,105 @@
       "id": "1",
       "email": "admin@gmail.com",
       "password": "AdminTest",
-      "nome": "Admin test"
+      "nome": "Admin"
     }
   ],
   "estoque": [
     {
-      "descricao": "aquiwcw",
+      "descricao": "Luva de procedimento descartável, tamanho médio.",
       "quantidade": 5,
       "preco": 36,
-      "nome": "cwwdw",
-      "imagemUrl": " ../assets/clinica.jpg",
-      "id": "144424"
+      "nome": "Luva de Procedimento",
+      "imagemUrl": "../assets/clinica.jpg",
+      "id": "100001"
     },
     {
-      "id": "25353535",
-      "nome": "Resina Comp",
+      "id": "100002",
+      "nome": "Resina Composta Nanohíbrida",
       "quantidade": 2,
       "preco": 15,
-      "descricao": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.",
+      "descricao": "Resina composta para restaurações, tom A2.",
       "imagemUrl": "../assets/clinica.jpg"
     },
     {
-      "id": "6363636",
-      "nome": "Resina Comp",
+      "id": "100003",
+      "nome": "Broca Carbide FG",
       "quantidade": 2,
       "preco": 15,
-      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.",
-      "imagemUrl": " ../assets/clinica.jpg"
+      "descricao": "Broca de alta performance para uso em turbina.",
+      "imagemUrl": "../assets/clinica.jpg"
     },
     {
-      "id": "24242",
-      "nome": "Resina Comp",
+      "id": "100004",
+      "nome": "Anestésico Lidocaína 2%",
       "quantidade": 2,
       "preco": 15,
-      "descricao": " Gato sarado",
-      "imagemUrl": " ../assets/clinica.jpg"
+      "descricao": "Cartucho de anestésico odontológico sem vasoconstritor.",
+      "imagemUrl": "../assets/clinica.jpg"
     },
     {
-      "id": "630950395",
-      "nome": "Resina Comp",
+      "id": "100005",
+      "nome": "Algodão Rolo Nº 2",
       "quantidade": 2,
       "preco": 15,
-      "descricao": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.",
-      "imagemUrl": " ../assets/clinica.jpg"
+      "descricao": "Algodão em rolo para procedimentos odontológicos.",
+      "imagemUrl": "../assets/clinica.jpg"
     },
     {
-      "id": "229424",
-      "nome": "Resina Comp",
+      "id": "100006",
+      "nome": "Kit de Matrizes Tofflemire",
       "quantidade": 2,
       "preco": 15,
-      "descricao": " Gato sarado",
-      "imagemUrl": " ../assets/clinica.jpg"
+      "descricao": "Kit com matrizes de aço inoxidável para restauração.",
+      "imagemUrl": "../assets/clinica.jpg"
     },
     {
-      "descricao": " Gato sarado",
+      "descricao": "Sugador descartável para procedimentos clínicos.",
       "quantidade": 2,
       "preco": 15,
-      "nome": "ww",
-      "imagemUrl": " ../assets/clinica.jpg",
-      "id": "1292822"
+      "nome": "Sugador Desc. Flexível",
+      "imagemUrl": "../assets/clinica.jpg",
+      "id": "100007"
     },
     {
-      "descricao": "cww",
+      "descricao": "Solução para bochecho pré-procedimento.",
       "quantidade": 2,
       "preco": 0,
-      "nome": "wdwdwc",
+      "nome": "Clorexidina 0.12%",
       "imagemUrl": "./",
-      "id": "wdwd"
+      "id": "100008"
     },
     {
-      "id": "wdwd",
-      "quantidade": 2,
-      "preco": 0,
-      "imagemUrl": "./",
-      "nome": "wdwddw",
-      "descricao": "wddd"
-    },
-    {
-      "id": "wdwd",
+      "id": "100009",
       "quantidade": 2,
       "preco": 0,
       "imagemUrl": "./",
-      "nome": "wcwc",
-      "descricao": "cwc"
+      "nome": "Escova Profilática",
+      "descricao": "Escova de nylon para profilaxia dentária."
     },
     {
-      "id": "4t4t",
+      "id": "100010",
+      "quantidade": 2,
+      "preco": 0,
+      "imagemUrl": "./",
+      "nome": "Fio Retrator Gengival",
+      "descricao": "Fio de algodão para retração gengival."
+    },
+    {
+      "id": "100011",
       "quantidade": 3,
       "preco": 0,
       "imagemUrl": "./",
-      "nome": "4t4t",
-      "descricao": "3r3r3r"
+      "nome": "Espátula de Inserção",
+      "descricao": "Instrumento para inserção de resinas e cimentos."
     },
     {
-      "id": "2uyu2i",
+      "id": "100012",
       "quantidade": 1,
       "preco": 23,
       "imagemUrl": "./",
-      "nome": "u2y2ui",
-      "descricao": "22heuih2u"
+      "nome": "Jato de Bicarbonato",
+      "descricao": "Pó de bicarbonato para polimento dentário."
     }
   ]
 }
