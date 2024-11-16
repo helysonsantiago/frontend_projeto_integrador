@@ -1,3 +1,5 @@
+// eslint-disable-file no-use-before-define 
+
 import { useState } from "react";
 import { IoImage } from "react-icons/io5";
 import { BiArchiveIn } from "react-icons/bi";
@@ -11,18 +13,27 @@ import {
     StyledTitleRetirada,
 } from "./styledRetirada";
 
-const Retirada = () => {
-    const [codigo, setCodigo] = useState("");
-    const [profissional, setProfissional] = useState("");
-    const [descricao, setDescricao] = useState("");
-    const [nomeProduto, setNomeProduto] = useState("");
-    const [quantidade, setQuantidade] = useState("");
-    const [historico, setHistorico] = useState([]);
+
+interface HistoricoItem {
+    codigo: string;
+    profissional: string;
+    descricao: string;
+    nomeProduto: string;
+    quantidade: string;
+}
+
+const Retirada: React.FC = () => {
+    const [codigo, setCodigo] = useState<string>("");
+    const [profissional, setProfissional] = useState<string>("");
+    const [descricao, setDescricao] = useState<string>("");
+    const [nomeProduto, setNomeProduto] = useState<string>("");
+    const [quantidade, setQuantidade] = useState<string>("");
+    const [historico, setHistorico] = useState<HistoricoItem[]>([]);
 
     const handleRetirar = () => {
         console.log("Função handleRetirar foi chamada!");
 
-        const novoHistorico = {
+        const novoHistorico: HistoricoItem = {
             codigo,
             profissional,
             descricao,

@@ -5,7 +5,7 @@ import { FaPencilAlt } from "react-icons/fa";
 import img from "../../assets/imgDefault.png";
 import { updateUser } from "../../slices/UserSlice";
 import * as Redux from "react-redux";
-import { userModel, userStates } from "../../types/user/usertypes";
+import { userStates } from "../../types/user/usertypes";
 
 
 export  type userUpdate = {
