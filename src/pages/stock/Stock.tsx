@@ -6,7 +6,7 @@ import {
   StyledTitleEstoque,
 } from "../stock/styled-stock";
 import { CustomTsDispatch } from "../../hooks/dispatch";
-import { getStock, resetStock } from "../../slices/StockSlice";
+import { getStock } from "../../slices/StockSlice";
 import { stockModel, stockStates } from "../../types/stock/stockType";
 import { FaClipboardList } from "react-icons/fa6";
 import { FaPencilAlt } from "react-icons/fa";

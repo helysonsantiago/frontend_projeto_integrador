@@ -18,7 +18,8 @@ interface propsNewItem {
 const NewItemStockModal: React.FC<propsNewItem> = (
   props: propsNewItem
 ): React.ReactElement => {
-  const { success_stock, stock } = Redux.useSelector(
+  const { success_stock
+   } = Redux.useSelector(
     (state: { stockStore: stockStates }) => state.stockStore
   );
 
@@ -27,8 +28,8 @@ const NewItemStockModal: React.FC<propsNewItem> = (
   const [nome, setNome] = React.useState<string>("");
   const [descricao, setDescricao] = React.useState<string>("");
   const [code, setCode] = React.useState<string>("");
-  const [qtd, setQtd] = React.useState<number>();
-  const [preco, setPreco] = React.useState<number>();
+  const [qtd, setQtd] = React.useState<number>(0);
+  const [preco, setPreco] = React.useState<number>(0);
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newName = event.target.value;
